@@ -44,6 +44,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
@@ -124,6 +132,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201612242021148_AddedCountriesModel.cs" />
+    <Compile Include="Migrations\201612242021148_AddedCountriesModel.Designer.cs">
+      <DependentUpon>201612242021148_AddedCountriesModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="YellowPagesViewEngine.cs" />
   </ItemGroup>
@@ -174,6 +187,25 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\YellowPages.DataAccess.EntityFramework\YellowPages.DataAccess.EntityFramework.csproj">
+      <Project>{7eb7766a-0b3e-4334-aa36-cc6a03e065ae}</Project>
+      <Name>YellowPages.DataAccess.EntityFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YellowPages.Entities\YellowPages.Entities.csproj">
+      <Project>{6e4ada78-8985-4601-8021-9b538bead2ac}</Project>
+      <Name>YellowPages.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YellowPages.Services\YellowPages.Services.csproj">
+      <Project>{e34ac19f-c837-4c52-bbf0-7adeb0998bad}</Project>
+      <Name>YellowPages.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201612242021148_AddedCountriesModel.resx">
+      <DependentUpon>201612242021148_AddedCountriesModel.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
