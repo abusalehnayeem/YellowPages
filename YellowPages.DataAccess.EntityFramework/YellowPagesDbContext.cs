@@ -18,10 +18,12 @@ namespace YellowPages.DataAccess.EntityFramework
         }
 
         public DbSet<Countries> Countries { get; set; }
+        public DbSet<Cities> Cities { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new CountriesMap());
+            modelBuilder.Configurations.Add(new CitiesMap());
             base.OnModelCreating(modelBuilder);
         }
     }

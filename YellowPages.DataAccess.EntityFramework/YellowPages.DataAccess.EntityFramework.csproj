@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Mapping\CitiesMap.cs" />
     <Compile Include="Mapping\CountriesMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="YellowPagesDbContext.cs" />

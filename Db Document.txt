@@ -1,0 +1,66 @@
+country
+
+ID, name, flagImage, creatDate
+city
+
+countryID, name, image, creatDate
+companyType
+
+id, city_id, name, image, description, creatDate
+companySubType
+
+id, company_type_id, name, image, description, creatDate
+company
+
+id, company_sub_type_id, name, logo_large, logo_small, description, established year, location, number of employees, creatDate
+company_working_hours ( different opening hours for each day )
+
+id, company_id, Sunday_open, Sunday_close, Monday_open, Monday_close, Tuesday_open, Tuesday_close, Wednesday_open, Wednesday_close, Thursday_open, Thursday_close, Friday_open, Friday_close, Saturday_open, Saturday_close, creatDate
+company_branch ( company can have many branches )
+
+id, company_id, location, description, creatDate
+branch_opening_hours ( different opening hours for each day )
+
+id, company_branch_id, Sunday_open, Sunday_close, Monday_open, Monday_close, Tuesday_open, Tuesday_close, Wednesday_open, Wednesday_close, Thursday_open, Thursday_close, Friday_open, Friday_close, Saturday_open, Saturday_close, creatDate
+companyPhone ( company can add more than one phone )
+
+id, company_id, phone_type, phone_number, description, creatDate
+companyWebsite ( company can add more than one website )
+
+id, company_id, website_url, description, creatDate
+companyE-mail ( company can add more than one e-mail )
+
+id, company_id, e-mail, description, creatDate
+companyReview ( users reviews )
+
+id, user_id, company_id, text, creatDate
+companyRate ( users can rate the company )
+
+id, user_id, company_id, rate_flag, creatDate
+companyLike ( user can like the company )
+
+id, user_id, company_id, like_flag, creatDate
+companyPaymentMethod ( company can choose which payment method the accept )
+
+id, company_id, credit_card, check, pay_pal, cash, debit, creatDate
+SpecialServices ( like wi-fi, reservation, delivery ... ; i add the services in this table and link it with the company in other table )
+
+id, service_name, service_phone_number, creatDate
+companyServices
+
+id, SpecialServices_id, company_id, creatDate
+companyProduct
+
+id, company_id, name, description, image, price, creatDate
+companyAlbum
+
+id, company_id, name, description, cover_image, creatDate
+albumPic
+
+id, companyAlbum_id, image_small, image_large, caption, description, creatDate
+picComment
+
+id, user_id, albumPic_id, message, creatDate
+picLike
+
+id, user_id, albumPic_id, likeFlag, creatDate

@@ -136,6 +136,14 @@
     <Compile Include="Migrations\201612242021148_AddedCountriesModel.Designer.cs">
       <DependentUpon>201612242021148_AddedCountriesModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201612251727262_AddAndUpdatedCities.cs" />
+    <Compile Include="Migrations\201612251727262_AddAndUpdatedCities.Designer.cs">
+      <DependentUpon>201612251727262_AddAndUpdatedCities.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612251734378_AddAndUpdatedCitiesCascadeDelete.cs" />
+    <Compile Include="Migrations\201612251734378_AddAndUpdatedCitiesCascadeDelete.Designer.cs">
+      <DependentUpon>201612251734378_AddAndUpdatedCitiesCascadeDelete.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="YellowPagesViewEngine.cs" />
@@ -205,6 +213,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201612242021148_AddedCountriesModel.resx">
       <DependentUpon>201612242021148_AddedCountriesModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612251727262_AddAndUpdatedCities.resx">
+      <DependentUpon>201612251727262_AddAndUpdatedCities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612251734378_AddAndUpdatedCitiesCascadeDelete.resx">
+      <DependentUpon>201612251734378_AddAndUpdatedCitiesCascadeDelete.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
