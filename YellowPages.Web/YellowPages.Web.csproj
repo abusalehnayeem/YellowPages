@@ -144,6 +144,14 @@
     <Compile Include="Migrations\201612251734378_AddAndUpdatedCitiesCascadeDelete.Designer.cs">
       <DependentUpon>201612251734378_AddAndUpdatedCitiesCascadeDelete.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201701071803219_UpdateTablesDefination.cs" />
+    <Compile Include="Migrations\201701071803219_UpdateTablesDefination.Designer.cs">
+      <DependentUpon>201701071803219_UpdateTablesDefination.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701071829364_UpdateAllTablesDefination.cs" />
+    <Compile Include="Migrations\201701071829364_UpdateAllTablesDefination.Designer.cs">
+      <DependentUpon>201701071829364_UpdateAllTablesDefination.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="YellowPagesViewEngine.cs" />
@@ -219,6 +227,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201612251734378_AddAndUpdatedCitiesCascadeDelete.resx">
       <DependentUpon>201612251734378_AddAndUpdatedCitiesCascadeDelete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701071803219_UpdateTablesDefination.resx">
+      <DependentUpon>201701071803219_UpdateTablesDefination.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701071829364_UpdateAllTablesDefination.resx">
+      <DependentUpon>201701071829364_UpdateAllTablesDefination.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

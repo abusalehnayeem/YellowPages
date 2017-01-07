@@ -19,8 +19,7 @@ namespace YellowPages.DataAccess.EntityFramework.Mapping
             Property(c => c.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             Property(c => c.Name).HasColumnName("Name").HasMaxLength(50).IsRequired().IsUnicode();
             Property(c => c.FlagImage).HasColumnName("FlagImage");
-            Property(c => c.CreatDate).HasColumnName("CreatDate");
-            Property(c => c.RowVersion).IsRowVersion().IsRequired();
+            Property(c => c.RowVersion).IsConcurrencyToken(true).IsRowVersion();
 
             ToTable("Countries");
         }
