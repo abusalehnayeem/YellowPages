@@ -51,6 +51,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseRepository.cs" />
+    <Compile Include="IDbContext.cs" />
+    <Compile Include="IRepository.cs" />
     <Compile Include="Mapping\CitiesMap.cs" />
     <Compile Include="Mapping\CountriesMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

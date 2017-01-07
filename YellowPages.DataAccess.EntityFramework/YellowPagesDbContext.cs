@@ -12,7 +12,7 @@ using YellowPages.Entities.Models;
 
 namespace YellowPages.DataAccess.EntityFramework
 {
-    public class YellowPagesDbContext : DbContext
+    public class YellowPagesDbContext : DbContext, IDbContext
     {
         #region Variable
 
@@ -39,11 +39,22 @@ namespace YellowPages.DataAccess.EntityFramework
             base.OnModelCreating(modelBuilder);
         }
 
+        public new IDbSet<TEntity> Set<TEntity>() where TEntity : class
+        {
+            return base.Set<TEntity>();
+        }
+
         public override int SaveChanges()
         {
             var currentDateTime = DateTime.Now;
 
-            foreach (var auditableEntity in ChangeTracker.Entries<IAuditableEntity>().Where(auditableEntity => auditableEntity.State == EntityState.Added || auditableEntity.State == EntityState.Modified))
+            foreach (
+                var auditableEntity in
+                    ChangeTracker.Entries<IAuditableEntity>()
+                        .Where(
+                            auditableEntity =>
+                                auditableEntity.State == EntityState.Added ||
+                                auditableEntity.State == EntityState.Modified))
             {
                 auditableEntity.Entity.LastModifiedDate = currentDateTime;
                 switch (auditableEntity.State)
@@ -55,9 +66,12 @@ namespace YellowPages.DataAccess.EntityFramework
                     case EntityState.Modified:
                         auditableEntity.Entity.LastModifiedDate = currentDateTime;
                         auditableEntity.Entity.LastModifiedBy = _context.User.Identity.Name;
-                        if (auditableEntity.Property(p => p.CreatedDate).IsModified || auditableEntity.Property(p => p.CreatedBy).IsModified)
+                        if (auditableEntity.Property(p => p.CreatedDate).IsModified ||
+                            auditableEntity.Property(p => p.CreatedBy).IsModified)
                         {
-                            throw new DbEntityValidationException(string.Format("Attempt to change created audit trails on a modified {0}", auditableEntity.Entity.GetType().FullName));
+                            throw new DbEntityValidationException(
+                                string.Format("Attempt to change created audit trails on a modified {0}",
+                                    auditableEntity.Entity.GetType().FullName));
                         }
                         break;
                     case EntityState.Detached:
@@ -77,7 +91,13 @@ namespace YellowPages.DataAccess.EntityFramework
         {
             var currentDateTime = DateTime.Now;
 
-            foreach (var auditableEntity in ChangeTracker.Entries<IAuditableEntity>().Where(auditableEntity => auditableEntity.State == EntityState.Added || auditableEntity.State == EntityState.Modified))
+            foreach (
+                var auditableEntity in
+                    ChangeTracker.Entries<IAuditableEntity>()
+                        .Where(
+                            auditableEntity =>
+                                auditableEntity.State == EntityState.Added ||
+                                auditableEntity.State == EntityState.Modified))
             {
                 auditableEntity.Entity.LastModifiedDate = currentDateTime;
                 switch (auditableEntity.State)
@@ -89,9 +109,12 @@ namespace YellowPages.DataAccess.EntityFramework
                     case EntityState.Modified:
                         auditableEntity.Entity.LastModifiedDate = currentDateTime;
                         auditableEntity.Entity.LastModifiedBy = _context.User.Identity.Name;
-                        if (auditableEntity.Property(p => p.CreatedDate).IsModified || auditableEntity.Property(p => p.CreatedBy).IsModified)
+                        if (auditableEntity.Property(p => p.CreatedDate).IsModified ||
+                            auditableEntity.Property(p => p.CreatedBy).IsModified)
                         {
-                            throw new DbEntityValidationException(string.Format("Attempt to change created audit trails on a modified {0}", auditableEntity.Entity.GetType().FullName));
+                            throw new DbEntityValidationException(
+                                string.Format("Attempt to change created audit trails on a modified {0}",
+                                    auditableEntity.Entity.GetType().FullName));
                         }
                         break;
                     case EntityState.Detached:
