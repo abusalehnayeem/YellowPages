@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace YellowPages.Entities.Models
 {
-    public class Countries:BaseEntity
+    public class Countries : BaseEntity
     {
         public string Name { get; set; }
         public string FlagImage { get; set; }
-        public virtual ICollection<Cities> Cities { get; set; } 
+        public virtual ICollection<Cities> Cities { get; set; }
     }
 }

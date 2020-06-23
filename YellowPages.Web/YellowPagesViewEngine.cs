@@ -1,46 +1,42 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 
 namespace YellowPages.Web
 {
     public class YellowPagesViewEngine : RazorViewEngine
     {
-        public YellowPagesViewEngine() : base()
+        public YellowPagesViewEngine()
         {
-            AreaViewLocationFormats = new string[]
+            AreaViewLocationFormats = new[]
             {
                 "~/Areas/{2}/Views/{1}/{0}.cshtml",
                 "~/Areas/{2}/Views/Shared/{0}.cshtml"
             };
-            AreaMasterLocationFormats = new string[]
+            AreaMasterLocationFormats = new[]
             {
                 "~/Areas/{2}/Views/{1}/{0}.cshtml",
                 "~/Areas/{2}/Views/Shared/{0}.cshtml"
             };
-            AreaPartialViewLocationFormats = new string[]
+            AreaPartialViewLocationFormats = new[]
             {
                 "~/Areas/{2}/Views/{1}/{0}.cshtml",
                 "~/Areas/{2}/Views/Shared/{0}.cshtml"
             };
-            ViewLocationFormats = new string[]
+            ViewLocationFormats = new[]
             {
                 "~/Views/{1}/{0}.cshtml",
                 "~/Views/Shared/{0}.cshtml"
             };
-            MasterLocationFormats = new string[]
+            MasterLocationFormats = new[]
             {
                 "~/Views/{1}/{0}.cshtml",
                 "~/Views/Shared/{0}.cshtml"
             };
-            PartialViewLocationFormats = new string[]
+            PartialViewLocationFormats = new[]
             {
                 "~/Views/{1}/{0}.cshtml",
                 "~/Views/Shared/{0}.cshtml"
             };
-            FileExtensions = new string[] { "cshtml" };
+            FileExtensions = new[] {"cshtml"};
         }
         //public YellowPagesViewEngine() : base()
         //{

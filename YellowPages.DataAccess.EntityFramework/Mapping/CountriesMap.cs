@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity.ModelConfiguration;
-using System.Data.Linq.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using YellowPages.Entities.Models;
 
 namespace YellowPages.DataAccess.EntityFramework.Mapping
 {
-    public class CountriesMap:EntityTypeConfiguration<Countries>
+    public class CountriesMap : EntityTypeConfiguration<Countries>
     {
         public CountriesMap()
         {

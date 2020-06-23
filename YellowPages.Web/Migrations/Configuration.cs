@@ -1,18 +1,16 @@
+using System.Data.Entity.Migrations;
+using YellowPages.DataAccess.EntityFramework;
+
 namespace YellowPages.Web.Migrations
 {
-    using System;
-    using System.Data.Entity;
-    using System.Data.Entity.Migrations;
-    using System.Linq;
-
-    internal sealed class Configuration : DbMigrationsConfiguration<YellowPages.DataAccess.EntityFramework.YellowPagesDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<YellowPagesDbContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(YellowPages.DataAccess.EntityFramework.YellowPagesDbContext context)
+        protected override void Seed(YellowPagesDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 

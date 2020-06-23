@@ -1,8 +1,7 @@
+using System.Data.Entity.Migrations;
+
 namespace YellowPages.Web.Migrations
 {
-    using System;
-    using System.Data.Entity.Migrations;
-    
     public partial class UpdateAllTablesDefination : DbMigration
     {
         public override void Up()
@@ -20,13 +19,13 @@ namespace YellowPages.Web.Migrations
             DropColumn("dbo.Countries", "CreatDateTime");
             DropColumn("dbo.Countries", "ModifiedDateTime");
         }
-        
+
         public override void Down()
         {
-            AddColumn("dbo.Countries", "ModifiedDateTime", c => c.DateTime(nullable: false));
-            AddColumn("dbo.Countries", "CreatDateTime", c => c.DateTime(nullable: false));
-            AddColumn("dbo.Cities", "ModifiedDateTime", c => c.DateTime(nullable: false));
-            AddColumn("dbo.Cities", "CreatDateTime", c => c.DateTime(nullable: false));
+            AddColumn("dbo.Countries", "ModifiedDateTime", c => c.DateTime(false));
+            AddColumn("dbo.Countries", "CreatDateTime", c => c.DateTime(false));
+            AddColumn("dbo.Cities", "ModifiedDateTime", c => c.DateTime(false));
+            AddColumn("dbo.Cities", "CreatDateTime", c => c.DateTime(false));
             DropColumn("dbo.Countries", "LastModifiedBy");
             DropColumn("dbo.Countries", "LastModifiedDate");
             DropColumn("dbo.Countries", "CreatedBy");
